@@ -3,20 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cit.pkg360.pkgclass;
+package collections;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author ronsilva
  */
-public class CIT360Class {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        //new class hi Ron
-    }
+public class ListCollection {
     
+    public static void main(String[] args) {
+        List mylist = new ArrayList();
+    }
 }
