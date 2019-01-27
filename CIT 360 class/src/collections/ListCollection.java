@@ -39,8 +39,18 @@ public class ListCollection {
             marvelMovies.add("Ant-Man and the Wasp");
             
                 System.out.println("My Marvel movies list:"+marvelMovies);
+                
+            //Adding elements to the list
+           ArrayList<String> newMarvelMovies =new ArrayList<String>();    
+            newMarvelMovies.add("Avengers Endgame");
+            newMarvelMovies.add("Spider-Man: Far From Home");
             
-       
+                System.out.println("New Marvel movies list:"+newMarvelMovies);
+                
+            //Removing elements from the list
+            marvelMovies.remove("Iron Man 2");
+            
+            System.out.println(marvelMovies);
             
     }
 }
