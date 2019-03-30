@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +7,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ronsilva
  */
+
+@WebServlet(name = "ServletsTest", urlPatterns=("/ServletsTest"))
 public class ServletsTest extends HttpServlet {
 
     /**
@@ -47,7 +50,7 @@ public class ServletsTest extends HttpServlet {
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request servlet request
+     * @param request servlet request       
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
@@ -55,7 +58,11 @@ public class ServletsTest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+          response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("Invalid login. Please try again");
+    
     }
 
     /**
@@ -69,9 +76,23 @@ public class ServletsTest extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+       
+       try (PrintWriter out = response.getWriter()) {
+        
+               String data[] = request.getParameterValues("data");
+               //String select = request.getParameter("country");
+               out.println("<h1>Signed In</h1>");
+               out.println("<h3>Profile</h3>");
+               
+               for(int x=0; x<=data.length -1; x++)
+               {
+                   out.println("<pre>["+x+"]=>"+data[x]+"</pre>");
+               }
+                
+        
+    }   
     }
-
     /**
      * Returns a short description of the servlet.
      *
@@ -82,4 +103,4 @@ public class ServletsTest extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-}
+    }

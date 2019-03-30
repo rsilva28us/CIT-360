@@ -11,6 +11,27 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div><a href="Servlets">Test my Servlets</a></div>
+        <h1>Sign in</h1>
+        <br>
+    <form action="ServletsTest" method="post">
+        Name:
+        <input type="text" name="data"/>
+        Last Name:
+        <input type="text" name="data"/>
+        Address:
+        <input type="text" name="data"/>
+        Country:
+        <select name="data">
+            <option value="United States">United States</option>
+            <option value ="Chile">Chile</option>
+            <option value ="Argentina">Argentina</option>
+            <option value ="Canada">Canada</option>
+            <option value ="Mexico">Mexico</option>
+            <option value ="Brazil">Brazil</option>
+        </select>
+        
+        
+        <input type="submit" value="send"/>
+    </form>
     </body>
 </html>
