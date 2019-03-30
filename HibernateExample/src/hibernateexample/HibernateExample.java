@@ -5,6 +5,7 @@
  */
 package hibernateexample;
 
+import java.util.*;
 /**
  *
  * @author ronsilva
@@ -15,7 +16,17 @@ public class HibernateExample {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        AutomobileDAO t = AutomobileDAO.getInstance();
+
+        List<Automobile> a = t.getAutomobiles();    
+        for (Automobile i : a) {
+            System.out.println(i);
+        }
+
+        System.out.println(t.getAutomobile(1));
     }
-    
 }
+
+
+
